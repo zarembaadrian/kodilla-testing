@@ -1,10 +1,10 @@
 package com.kodilla.testing;
 import  com.kodilla.testing.user.SimpleUser;
-import com.kodilla.testing.user.calculator.calculatorApi;
+import com.kodilla.testing.user.calculator.CalculatorApi;
 
 public class TestingMain {
     public static void main (String[]args) {
-        calculatorApi myCalculator = new calculatorApi();
+        CalculatorApi myCalculator = new CalculatorApi();
 
         // test with add
 
