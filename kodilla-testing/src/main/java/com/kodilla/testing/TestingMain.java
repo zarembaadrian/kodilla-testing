@@ -1,4 +1,4 @@
-package com.kodilla.testing.user;
+package com.kodilla.testing;
 import  com.kodilla.testing.user.SimpleUser;
 import com.kodilla.testing.user.calculator.calculatorApi;
 
@@ -11,7 +11,7 @@ public class TestingMain {
         int resultadd = myCalculator.addAToB(10, 7);
 
         if(resultadd == 17) {
-            System.out.println("Test with add complete!giti");
+            System.out.println("Test with add complete!");
         } else {
             System.out.println("Test with add failed!");
         }
