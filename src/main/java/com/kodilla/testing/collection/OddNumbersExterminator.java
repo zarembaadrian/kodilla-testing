@@ -5,15 +5,16 @@ import java.util.*;
 
 class OddNumbersExterminator {
    public ArrayList<Integer> exterminate(ArrayList<Integer> numbers) {
-       ArrayList<Integer>  list1 = new ArrayList<>();
+
+       ArrayList<Integer>  testedList = new ArrayList<>();
        for (Integer numb : numbers) {
            int index = 0;
           Integer object = numbers.get(index++);
 
            if (object % 2 == 0) {
-               list1.add(object);
+               testedList.add(object);
            }
        }
-   return list1;
+   return testedList;
    }
 }

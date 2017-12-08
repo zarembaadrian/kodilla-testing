@@ -11,7 +11,9 @@ public class CollectionTestSuite {
     public void testCollectionWithEmptyList() {
 
         OddNumbersExterminator numbersChecking = new OddNumbersExterminator();
+
         ArrayList<Integer> emptyList = new ArrayList<>();
+
         numbersChecking.exterminate(emptyList);
     }
 
@@ -19,7 +21,9 @@ public class CollectionTestSuite {
     public void testCollectionsWithNumbers() {
 
         OddNumbersExterminator numbersChecking = new OddNumbersExterminator();
+
         ArrayList<Integer> maxList = new ArrayList<>();
+
         Random randomGenerator = new Random();
 
         for(int i  =0 ; i<20 ; i++) {
