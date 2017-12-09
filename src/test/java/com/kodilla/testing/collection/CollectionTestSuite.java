@@ -14,7 +14,8 @@ public class CollectionTestSuite {
 
         ArrayList<Integer> emptyList = new ArrayList<>();
 
-        numbersChecking.exterminate(emptyList);
+
+        Assert.assertEquals(emptyList, numbersChecking.exterminate(emptyList));
     }
 
     @Test
@@ -26,10 +27,12 @@ public class CollectionTestSuite {
 
         Random randomGenerator = new Random();
 
-        for(int i  =0 ; i<20 ; i++) {
+        for(int i  =0 ; i<30 ; i++) {
             maxList.add(randomGenerator.nextInt(50));
         }
         numbersChecking.exterminate(maxList);
+
+        Assert.assertEquals(numbersChecking.exterminate(maxList), numbersChecking.exterminate(maxList));
     }
 }
 
