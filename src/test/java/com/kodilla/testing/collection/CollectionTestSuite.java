@@ -27,12 +27,19 @@ public class CollectionTestSuite {
 
         Random randomGenerator = new Random();
 
-        for(int i  =0 ; i<30 ; i++) {
-            maxList.add(randomGenerator.nextInt(50));
+        for(int i  =0 ; i<5 ; i++) {
+            maxList.add(randomGenerator.nextInt(30));
         }
         numbersChecking.exterminate(maxList);
 
-        Assert.assertEquals(numbersChecking.exterminate(maxList), numbersChecking.exterminate(maxList));
+        ArrayList<Integer> evenNumberList = new ArrayList<>();
+        for(int i=0 ; i<5 ; i++) {
+            Integer random = randomGenerator.nextInt(30);
+            }
+
+
+
+        Assert.assertEquals(numbersChecking.exterminate(evenNumberList), numbersChecking.exterminate(maxList));
     }
 }
 
