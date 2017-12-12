@@ -44,8 +44,15 @@ public class ShapeCollectorTestSuite {
     shapeCollector.addFigure(triangle);
     shapeCollector.addFigure(square);
 
-
-
     Assert.assertEquals(square,shapeCollector.getFigure(1) );
+}
+@Test
+    public void testShowFigures() {
+    Shape circle = new Circle();
+    ShapeCollector shapeCollector = new ShapeCollector();
+
+    shapeCollector.addFigure(circle);
+
+    Assert.assertEquals(circle,shapeCollector.showFigures());
 }
 }

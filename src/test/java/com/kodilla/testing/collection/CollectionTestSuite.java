@@ -3,6 +3,7 @@ package com.kodilla.testing.collection;
 import org.junit.*;
 import com.kodilla.testing.collection.OddNumbersExterminator;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Random;
 
 public class CollectionTestSuite {
@@ -23,23 +24,20 @@ public class CollectionTestSuite {
 
         OddNumbersExterminator numbersChecking = new OddNumbersExterminator();
 
+
         ArrayList<Integer> maxList = new ArrayList<>();
+        maxList.add(1);
+        maxList.add(2);
+        maxList.add(3);
+        maxList.add(4);
+        maxList.add(5);
 
-        Random randomGenerator = new Random();
-
-        for(int i  =0 ; i<5 ; i++) {
-            maxList.add(randomGenerator.nextInt(30));
-        }
-        numbersChecking.exterminate(maxList);
-
-        ArrayList<Integer> evenNumberList = new ArrayList<>();
-        for(int i=0 ; i<5 ; i++) {
-            Integer random = randomGenerator.nextInt(30);
-            }
+        ArrayList<Integer> evenList = new ArrayList<>();
+        evenList.add(2);
+        evenList.add(4);
 
 
-
-        Assert.assertEquals(numbersChecking.exterminate(evenNumberList), numbersChecking.exterminate(maxList));
+        Assert.assertEquals(numbersChecking.exterminate(maxList), numbersChecking.exterminate(evenList));
     }
 }
 

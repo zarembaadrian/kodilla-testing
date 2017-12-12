@@ -8,11 +8,8 @@ class OddNumbersExterminator {
 
        ArrayList<Integer>  testedList = new ArrayList<>();
        for (Integer numb : numbers) {
-           int index = 0;
-          Integer object = numbers.get(index++);
-
-           if (object % 2 == 0) {
-               testedList.add(object);
+           if (numb % 2 == 0) {
+               testedList.add(numb);
            }
        }
    return testedList;
