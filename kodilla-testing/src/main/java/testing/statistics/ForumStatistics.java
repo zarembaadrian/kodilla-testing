@@ -7,14 +7,21 @@ public class ForumStatistics {
     double averagePostsForUsers;
     double averageCommentsForUsers;
     double averageCommentsForPosts;
+    Statistics statistics;
+
+    public ForumStatistics(Statistics statistics) {
+        this.statistics = statistics;
+    }
 
     public void caculateAdvStatistics(Statistics statistics) {
         numberOfUsers = statistics.usersNames().size();
         numberOfPosts = statistics.postCount();
         numberOfComments = statistics.commentsCount();
-        averagePostsForUsers = (statistics.postCount()) / (statistics.usersNames().size());
-        averageCommentsForUsers = (statistics.commentsCount()) / (statistics.usersNames().size());
-        averageCommentsForPosts = (statistics.commentsCount()) / (statistics.postCount());
+        if(statistics.usersNames().isEmpty() && statistics.postCount()>0 ) {
+            averagePostsForUsers = (statistics.postCount()) / (statistics.usersNames().size());
+            averageCommentsForUsers = (statistics.commentsCount()) / (statistics.usersNames().size());
+            averageCommentsForPosts = (statistics.commentsCount()) / (statistics.postCount());
+        }
     }
 
     public void showStatistics() {
