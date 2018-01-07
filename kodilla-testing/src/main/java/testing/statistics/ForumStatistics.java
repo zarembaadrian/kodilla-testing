@@ -4,9 +4,9 @@ public class ForumStatistics {
     int numberOfUsers;
     int numberOfPosts;
     int numberOfComments;
-    double averagePostsForUsers;
-    double averageCommentsForUsers;
-    double averageCommentsForPosts;
+    int averagePostsForUsers;
+    int averageCommentsForUsers;
+    int averageCommentsForPosts;
     Statistics statistics;
 
     public ForumStatistics(Statistics statistics) {
@@ -17,11 +17,14 @@ public class ForumStatistics {
         numberOfUsers = statistics.usersNames().size();
         numberOfPosts = statistics.postCount();
         numberOfComments = statistics.commentsCount();
-        if(statistics.usersNames().isEmpty() && statistics.postCount()>0 ) {
+
+        if(statistics.postCount()>0 && statistics.commentsCount()>0  )
+        {
             averagePostsForUsers = (statistics.postCount()) / (statistics.usersNames().size());
             averageCommentsForUsers = (statistics.commentsCount()) / (statistics.usersNames().size());
             averageCommentsForPosts = (statistics.commentsCount()) / (statistics.postCount());
         }
+
     }
 
     public void showStatistics() {
@@ -40,15 +43,15 @@ public class ForumStatistics {
         return numberOfComments;
     }
 
-    public double getAveragePostsForUsers() {
+    public int getAveragePostsForUsers() {
         return averagePostsForUsers;
     }
 
-    public double getAverageCommentsForUsers() {
+    public int getAverageCommentsForUsers() {
         return averageCommentsForUsers;
     }
 
-    public double getAverageCommentsForPosts() {
+    public int getAverageCommentsForPosts() {
         return averageCommentsForPosts;
     }
 }
