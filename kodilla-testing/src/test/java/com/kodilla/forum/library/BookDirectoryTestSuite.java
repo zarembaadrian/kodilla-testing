@@ -30,7 +30,7 @@ public class BookDirectoryTestSuite {
         when(libraryDatabaseMock.listBookWithCondition("Secret")).thenReturn(resultListOfBooks);
 
         List<Book> theListOfBooks = bookLibrary.listBooksWithCondition("Secret");
-        Assert.assertEquals(5,theListOfBooks.size());
+        Assert.assertEquals(4,theListOfBooks.size());
     }
 
     @Test
@@ -59,12 +59,12 @@ public class BookDirectoryTestSuite {
 
     }
 
-    public void testListBookWithConditionFragmentShorterThan3() {
+    @Test
+    public void testListBookWithConditionFragmentShorterThan3 () {
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         List<Book> resultListOf10Books = generateListOfNBooks(10);
-        when(libraryDatabaseMock.listBookWithCondition(anyString()))
-                .thenReturn(resultListOf10Books);
+        when(libraryDatabaseMock.listBookWithCondition(anyString())).thenReturn(resultListOf10Books);
 
         // When
         List<Book> theListOfBooks10 = bookLibrary.listBooksWithCondition("An");
@@ -75,9 +75,9 @@ public class BookDirectoryTestSuite {
     }
 
     private List<Book> generateListOfNBooks(int booksQuantity) {
-        List<Book> resultList = new ArrayList<>();
-        for(int n = 0; n < booksQuantity; n++) {
-            Book theBook = new Book("Title" + n, "Author" + n,1970 + n);
+        List<Book> resultList = new ArrayList<Book>();
+        for(int n = 1; n <= booksQuantity; n++){
+            Book theBook = new Book("Title " + n, "Author " + n, 1970 + n);
             resultList.add(theBook);
         }
         return resultList;

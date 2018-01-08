@@ -1,13 +1,13 @@
 package testing.statistics;
 
 public class ForumStatistics {
-    int numberOfUsers;
-    int numberOfPosts;
-    int numberOfComments;
-    int averagePostsForUsers;
-    int averageCommentsForUsers;
-    int averageCommentsForPosts;
-    Statistics statistics;
+ private int numberOfUsers;
+ private int numberOfPosts;
+ private   int numberOfComments;
+ private   int averagePostsForUsers;
+ private   int averageCommentsForUsers;
+ private   int averageCommentsForPosts;
+ private    Statistics statistics;
 
     public ForumStatistics(Statistics statistics) {
         this.statistics = statistics;
