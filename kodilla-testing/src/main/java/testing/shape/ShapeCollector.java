@@ -17,12 +17,11 @@ public class ShapeCollector {
     public  Shape getFigure(int n) {
         return figures.get(n);
     }
-    public Shape showFigures() {
-        Shape myShape = null;
+
+    public void showFigures() {
         for (int i = 0; i < figures.size(); i++) {
             System.out.println(figures.get(i));
         }
-        return myShape;
     }
 
     public int getFiguresListQuantity() {

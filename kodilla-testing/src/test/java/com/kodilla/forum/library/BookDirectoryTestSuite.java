@@ -9,7 +9,7 @@ import testing.library.LibraryDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
 public class BookDirectoryTestSuite {
@@ -71,7 +71,7 @@ public class BookDirectoryTestSuite {
 
         // Then
         assertEquals(0, theListOfBooks10.size());
-        verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
+        verify(libraryDatabaseMock, times(0)).listBookWithCondition(anyString());
     }
 
     private List<Book> generateListOfNBooks(int booksQuantity) {
