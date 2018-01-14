@@ -4,6 +4,6 @@ public class PoemBeutifier {
     public String beautify(String abc, PoemDecorator poemDecorator) {
         String result = poemDecorator.decorate(abc);
         System.out.println("Result after beautify: " + result);
-        return null;
+        return result;
     }
 }
