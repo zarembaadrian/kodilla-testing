@@ -73,6 +73,10 @@ public class BookDirectoryTestSuite {
         assertEquals(0, theListOfBooks10.size());
         verify(libraryDatabaseMock, times(0)).listBookWithCondition(anyString());
     }
+    @Test
+    public void testListBooksInHandsOff() {
+
+    }
 
     private List<Book> generateListOfNBooks(int booksQuantity) {
         List<Book> resultList = new ArrayList<Book>();
