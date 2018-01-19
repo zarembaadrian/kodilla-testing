@@ -1,26 +1,26 @@
 package com.kodilla.stream.world;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
+import java.util.List;
 
 public final class Continent {
+    private final String name;
+    private  List<Country> countryList;
 
-    Country country = new Country();
 
-    public final ArrayList<BigDecimal> europe = new ArrayList<>(); {
-        europe.add(country.getPopoulationOfRomania());
-        europe.add(country.getPopulationOfPoland());
-        europe.add(country.getPopulationOfGermany());
+    public Continent(String name, final List<Country> countryList) {
+        this.name = name;
+        this.countryList = countryList;
     }
 
-    public final ArrayList<BigDecimal> africa = new ArrayList<>(); {
-        africa.add(country.getPopulationOfKenya());
-        africa.add(country.getPopulationOfLibia());
-        africa.add(country.getPopulationOfMarocco());
+    public Continent(String name) {
+        this.name = name;
     }
-    public final ArrayList<BigDecimal> asia = new ArrayList<>(); {
-        asia.add(country.getPopulationOfChina());
-        asia.add(country.getPopulationOfVietnam());
-        asia.add(country.getPopulationOfJapanesee());
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Country> getCountryList() {
+        return countryList;
     }
 }

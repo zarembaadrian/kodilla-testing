@@ -76,6 +76,10 @@ public class BookDirectoryTestSuite {
     @Test
     public void testListBooksInHandsOff() {
 
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+
+        List<Book> bookToBorrow = generateListOfNBooks(30);
     }
 
     private List<Book> generateListOfNBooks(int booksQuantity) {

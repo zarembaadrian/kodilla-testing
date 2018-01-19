@@ -4,14 +4,11 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.OptionalDouble;
-import java.util.OptionalInt;
 import java.util.stream.IntStream;
-import java.util.stream.LongStream;
 
+import static java.time.temporal.ChronoUnit.DAYS;
 import static java.util.stream.Collectors.toList;
 
 
@@ -154,10 +151,10 @@ public class BoardTestSuite {
                 .filter(t -> t.getCreated().isBefore(LocalDate.now()))
                 .collect(toList());
 
-         OptionalInt avg = IntStream.range(0, tasks.size())
-                .map(n -> LocalDate.now().toEpochDay() - tasks.get(n).getCreated().toEpochDay())
-                .average();
-        Assert.assertEquals(java.util.Optional.of(-10), avg);
+      double avg = IntStream.range(0, tasks.size())
+            .mapToLong(n -> DAYS.between(LocalDate.now(), tasks.get(n).getCreated() ))
+               .average().getAsDouble();
+       Assert.assertEquals(10, avg, 0.2);
     }
 }
 
