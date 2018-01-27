@@ -134,7 +134,6 @@ public class BoardTestSuite {
                 .filter(d -> d.compareTo(LocalDate.now().minusDays(10)) <= 0)
                 .count();
 
-
         Assert.assertEquals(2, longTasks);
     }
 
@@ -152,9 +151,10 @@ public class BoardTestSuite {
                 .collect(toList());
 
       double avg = IntStream.range(0, tasks.size())
-            .mapToLong(n -> DAYS.between(LocalDate.now(), tasks.get(n).getCreated() ))
+            .mapToLong(n -> DAYS.between(tasks.get(n).getCreated(),LocalDate.now()))
                .average().getAsDouble();
-       Assert.assertEquals(10, avg, 0.2);
+
+       Assert.assertEquals(15, avg, 0.1);
     }
 }
 
