@@ -10,4 +10,11 @@ public class TaskList {
         tasks = new ArrayList<>();
     }
 
+    public void addTask(String e) {
+        tasks.add(e);
+    }
+
+    public List<String> getTasks() {
+        return tasks;
+    }
 }
